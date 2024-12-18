@@ -1,0 +1,25 @@
+{
+  "name": "ebics-api/ebics-api-client-php",
+  "type": "library",
+  "description": "PHP module to use EBICS API $client->",
+  "keywords": [
+    "api",
+    "client",
+    "ebics",
+    "PHP"
+  ],
+  "authors": [
+    {
+      "name": "Andrew Svirin"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "EbicsApi\\Client\\": "src"
+    }
+  },
+  "require": {
+    "php": "^8"
+  }
+}

@@ -1,0 +1,22 @@
+services:
+  php-ebics-api-client-php:
+    container_name: php-ebics-api-client-php
+    image: php:8.1.6-cli
+    volumes:
+      - ../:/var/www/ebics-api-client-php
+    tty: true
+    extra_hosts:
+      - "ebics-api-$client->local:172.17.0.1"
+    networks:
+      ebics-api-client-php-net:
+        ipv4_address: 172.139.0.6
+
+networks:
+  ebics-api-client-php-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.139.0.0/24
+    driver_opts:
+      com.docker.network.bridge.name: br_eacph
